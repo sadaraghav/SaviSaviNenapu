@@ -7,6 +7,7 @@ import BloggerHome from './BloggerHome.jsx';
 import BlogAndCommentsScrn from './BlogAndCommentsScrn.jsx';
 import UserProfile from './UserProfile.jsx';
 import BloggerConstants from './BloggerConstants';
+import Footer from './Footer.jsx';
 import $ from 'jquery';
 
 /*
@@ -330,18 +331,21 @@ class Blogger extends React.Component {
 			currentScreenLayout = <div>
 				<TNavBar configureOptions={BloggerConstants.NAVBAR_SHOW_LOGGEDOUT_OPTIONS} onNavOptionsSelect={this.onNavOptionsSelectCB}/>
 				<BloggerHome onUserTriggerForDetailedView ={this.onUserTriggerForDetailedViewCB}></BloggerHome>
+                <Footer></Footer>
 			</div>
 			break;
 			case BloggerConstants.STATE_LOGIN:
 			currentScreenLayout =  <div>
 				<TNavBar configureOptions={BloggerConstants.NAVBAR_SHOW_NO_OPTIONS} onNavOptionsSelect={this.onNavOptionsSelectCB}/>
 				<LoginScreen loginReason={this.state.loginReason} onLoginDataReceived={this.onLoginDataReceivedCB}/>
+                <Footer></Footer>
 			</div>
 			break;
 			case BloggerConstants.STATE_HOME_LOGGEDIN:
 			currentScreenLayout =  <div>
 				<TNavBar configureOptions={BloggerConstants.NAVBAR_SHOW_LOGGEDIN_OPTIONS} loggedInUserId={this.state.loggedInUserId} onNavOptionsSelect={this.onNavOptionsSelectCB}/>
 				<BloggerHome onUserTriggerForDetailedView ={this.onUserTriggerForDetailedViewCB} userFilter = {this.state.loggedInUserId}/>
+                <Footer></Footer>
 			</div>
 			break;
 			case BloggerConstants.STATE_HOME_LOGGEDIN_ALLBLOGS:
@@ -349,6 +353,7 @@ class Blogger extends React.Component {
 			currentScreenLayout =  <div>
 				<TNavBar configureOptions={BloggerConstants.NAVBAR_SHOW_LOGGEDIN_OPTIONS} loggedInUserId={this.state.loggedInUserId} onNavOptionsSelect={this.onNavOptionsSelectCB}/>
 				<BloggerHome onUserTriggerForDetailedView ={this.onUserTriggerForDetailedViewCB}></BloggerHome>
+                <Footer></Footer>
 			</div>
 			break;
 			case BloggerConstants.STATE_HOME_SEARCHRESULTS:
@@ -356,18 +361,21 @@ class Blogger extends React.Component {
 			currentScreenLayout =  <div>
 				{NavBarConfig}
 				<BloggerHome onUserTriggerForDetailedView ={this.onUserTriggerForDetailedViewCB} searchStr = {this.state.searchStr}/>
+                <Footer></Footer>
 			</div>
 			break;
 			case BloggerConstants.STATE_SIGNUP:
 			currentScreenLayout =  <div>
 				<TNavBar configureOptions={BloggerConstants.NAVBAR_SHOW_NO_OPTIONS} onNavOptionsSelect={this.onNavOptionsSelectCB}/>
 				<NewUser userAddReason={this.state.loginReason}  onNewUserDataReceived={this.onNewUserDataReceivedCB}/>
+                <Footer></Footer>
 			</div>
 			break;
 			case BloggerConstants.STATE_NEW_BLOG:
 			currentScreenLayout =  <div>
 				<TNavBar configureOptions={BloggerConstants.NAVBAR_SHOW_NO_OPTIONS} onNavOptionsSelect={this.onNavOptionsSelectCB}/>
 				<NewBlog onNewBlogDataReceived={this.onNewBlogDataReceivedCB}/>
+                <Footer></Footer>
 			</div>
 			break;
 			case BloggerConstants.STATE_VIEW_BLOG:
@@ -375,6 +383,7 @@ class Blogger extends React.Component {
 			currentScreenLayout =  <div>
 				{NavBarConfig}
 				<BlogAndCommentsScrn selectedBlogData = {this.state.selectedBlog} loggedInUser = {this.state.loggedInUserId} onLoginRequestForComment={this.onLoginRequestForComment}/>
+                <Footer></Footer>
 			</div>
 			break;
 			case BloggerConstants.STATE_PROFILE_UPDATE:
@@ -382,6 +391,7 @@ class Blogger extends React.Component {
 			currentScreenLayout =  <div>
 				<TNavBar configureOptions={BloggerConstants.NAVBAR_SHOW_LOGGEDIN_OPTIONS} loggedInUserId={this.state.loggedInUserId} onNavOptionsSelect={this.onNavOptionsSelectCB}/>
 				<UserProfile userData = {this.state.userProfileData} onUpdatedUserDataReceived={this.onUpdatedUserDataReceivedCB} />
+                <Footer></Footer>
 			</div>
 			break;
 			default:
@@ -390,7 +400,7 @@ class Blogger extends React.Component {
 		return (
 			<div>
 				{currentScreenLayout}
-			</div>
+ 			</div>
 		);
 	}
 }
