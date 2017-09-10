@@ -6,6 +6,7 @@ import BloggerConstants from './BloggerConstants';
 import { parse_link_header } from './BloggerUtils';
 import ReactLoading from 'react-loading';
 
+const imageUrl = require(`./background.jpg`)
 
 class BloggerHome extends React.Component {
 	constructor(props){
@@ -225,7 +226,7 @@ class BloggerHome extends React.Component {
 			marginLeft:"50%"
 		}
 		var pageStyle = {
-			marginTop:"7%"
+	        backgroundImage: `url(${imageUrl})`
 		}
 		var errorStyle ={
 			marginTop:"15%",
