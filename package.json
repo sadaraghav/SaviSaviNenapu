@@ -7,7 +7,7 @@
     "start": "webpack-dev-server --hot",
     "production": "webpack -p"
   },
-  "author": "Bino Varghese",
+  "author": "Sada and Raghav",
   "license": "ISC",
   "dependencies": {
     "jquery": "^3.2.1",
