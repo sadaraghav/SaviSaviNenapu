@@ -47804,7 +47804,7 @@ var TNavBar = function (_React$Component) {
 						_react2.default.createElement(
 							'a',
 							{ href: '#', onClick: this.onHomeSelect },
-							'Savi Savi Nenapu Blog'
+							'Savi Savi Nenapu Blog new'
 						)
 					),
 					_react2.default.createElement(_reactBootstrap.Navbar.Toggle, null)
