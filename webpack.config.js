@@ -20,7 +20,8 @@ config = {
 			query: {
 				presets: ['es2015', 'react']
 			}
-		}
+		},
+                { test: /\.jpg$/, loader: "url-loader?mimetype=jpg" }
 	]
 }
 }

@@ -4,8 +4,11 @@ var Footer = React.createClass({
   render() {
     console.log("Footer Screen");
     var style = {
-    marginLeft:"30%",
-    color: '#E33054'
+    color: 'white',
+    marginTop: "2%",    
+    display: 'block',
+    background: 'black',
+    textAlign: 'center'
     };  
     return (
       <footer className="footer" id="footer">
